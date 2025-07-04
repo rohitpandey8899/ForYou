@@ -494,10 +494,58 @@ footer {
   }
 }
 @media (max-width: 600px) {
+  body {
+    background: #101014;
+    margin: 0;
+    padding: 0;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+  }
+  .appbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 54px;
+    background: #101014;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    box-shadow: 0 2px 12px #0003;
+    border-bottom: 1px solid #23232a;
+  }
+  .appbar .logo-img {
+    max-height: 36px;
+    margin: 0 auto;
+    display: block;
+  }
   .navbar {
-    flex-direction: column;
-    gap: 0.5rem;
-    padding: 0 0.5rem;
+    display: none;
+  }
+  main, .demo-main {
+    padding-top: 60px;
+  }
+  .features, .about, .faq, .demo-content, .demo-form-float {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 2px 16px #0002;
+    margin: 1.2rem 0.5rem;
+    padding: 1.2rem 1rem;
+  }
+  .demo-form-float {
+    box-shadow: 0 2px 16px #4f8cff22;
+    border-radius: 18px;
+    margin-bottom: 1.5rem;
+  }
+  .btn-primary, .btn-large {
+    font-size: 1.1rem;
+    padding: 1rem 0;
+    border-radius: 28px;
+    min-width: 140px;
+  }
+  .footer-content {
+    padding-bottom: 70px;
   }
   .logo-img {
     max-height: 28px;
@@ -516,12 +564,6 @@ footer {
     margin-left: 0;
     width: 100%;
     align-items: center;
-  }
-  .btn-primary, .btn-large {
-    width: 100%;
-    font-size: 1rem;
-    padding: 0.7rem 0;
-    min-width: 120px;
   }
   .hero-content h1 {
     font-size: 1.1rem;
