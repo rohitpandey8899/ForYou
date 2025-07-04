@@ -655,21 +655,10 @@ footer {
     transition: all 0.3s;
   }
   .mobile-nav {
-    display: none;
-    position: fixed;
-    top: 54px;
-    left: 0;
-    right: 0;
-    background: #18181c;
-    z-index: 1050;
-    box-shadow: 0 4px 24px #0005;
-    border-bottom-left-radius: 18px;
-    border-bottom-right-radius: 18px;
-    padding: 1.2rem 0.5rem 1.2rem 0.5rem;
-    animation: slideDownNav 0.3s;
+    display: none !important;
   }
   .mobile-nav.active {
-    display: block;
+    display: block !important;
   }
   .mobile-nav ul {
     list-style: none;
