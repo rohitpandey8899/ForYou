@@ -1471,3 +1471,25 @@ footer {
     display: block;
   }
 } 
+
+@media (max-width: 600px) {
+  .btn-primary.nav-demo {
+    width: 100%;
+    display: block;
+    padding: 1rem 0;
+    font-size: 1.15rem;
+    border-radius: 28px;
+    background: linear-gradient(90deg, #4f8cff 0%, #ff6ec4 40%, #f9d423 70%, #43e97b 100%) !important;
+    color: #fff !important;
+    text-align: center;
+    margin: 0.7rem 0;
+    box-shadow: 0 2px 8px #4f8cff33;
+    border: none;
+    font-weight: bold;
+  }
+  .btn-primary.nav-demo:hover,
+  .btn-primary.nav-demo:focus {
+    background: linear-gradient(90deg, #43e97b 0%, #f9d423 40%, #ff6ec4 70%, #4f8cff 100%) !important;
+    color: #fff !important;
+  }
+} 
