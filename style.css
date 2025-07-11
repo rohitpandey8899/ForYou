@@ -1172,3 +1172,11 @@ footer {
     width: 96%;
   }
 } 
+
+@media (max-width: 600px) {
+  .demo-content,
+  .demo-content h1,
+  .demo-content p {
+    color: #101014 !important;
+  }
+} 
