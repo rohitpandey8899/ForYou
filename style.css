@@ -1476,16 +1476,18 @@ footer {
   .btn-primary.nav-demo {
     width: 100%;
     display: block;
-    padding: 1rem 0;
+    padding: 1.1rem 1.5rem;
     font-size: 1.15rem;
     border-radius: 28px;
     background: linear-gradient(90deg, #4f8cff 0%, #ff6ec4 40%, #f9d423 70%, #43e97b 100%) !important;
     color: #fff !important;
     text-align: center;
-    margin: 0.7rem 0;
+    margin: 1rem 0 1.2rem 0;
     box-shadow: 0 2px 8px #4f8cff33;
     border: none;
     font-weight: bold;
+    justify-content: center;
+    align-items: center;
   }
   .btn-primary.nav-demo:hover,
   .btn-primary.nav-demo:focus {
