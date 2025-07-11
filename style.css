@@ -172,8 +172,8 @@ header {
   will-change: transform;
 }
 .partner-logo {
-  width: 180px;
-  height: 60px;
+  width: 320px !important;
+  height: 140px !important;
   object-fit: contain;
   background: transparent !important;
   border-radius: 0;
@@ -1178,5 +1178,296 @@ footer {
   .demo-content h1,
   .demo-content p {
     color: #101014 !important;
+  }
+} 
+
+/* Customer Stories Section Styles */
+.customer-stories {
+  background: #fff;
+  padding: 4rem 0 3rem 0;
+  text-align: center;
+}
+.customer-stories-header {
+  margin-bottom: 2.5rem;
+}
+.customer-stories-header h2 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #18181c;
+  margin-bottom: 0.5rem;
+}
+.customer-stories-rating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 1.3rem;
+  color: #18181c;
+  margin-bottom: 1.5rem;
+}
+.rating-score {
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: #18181c;
+}
+.rating-stars {
+  color: #FFD600;
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+}
+.rating-count {
+  color: #888;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+.customer-stories-carousel {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  position: relative;
+  min-height: 320px;
+}
+.customer-story-card {
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 4px 32px #0001, 0 1.5px 8px #0001;
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  text-align: left;
+  min-width: 340px;
+  max-width: 370px;
+  width: 100%;
+  opacity: 0.5;
+  transform: scale(0.92);
+  transition: transform 0.5s, opacity 0.5s, box-shadow 0.5s;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+.customer-story-card.active {
+  opacity: 1;
+  transform: translateX(-50%) scale(1.04);
+  box-shadow: 0 8px 32px #0002, 0 2px 16px #0001;
+  z-index: 3;
+  pointer-events: auto;
+}
+.customer-story-card.prev {
+  transform: translateX(-120%) scale(0.92);
+  z-index: 2;
+}
+.customer-story-card.next {
+  transform: translateX(20%) scale(0.92);
+  z-index: 2;
+}
+.customer-story-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.7rem;
+}
+.customer-story-logo img {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+  border-radius: 8px;
+  background: #fff;
+}
+.customer-story-logo span {
+  font-weight: 700;
+  color: #2a3a60;
+  font-size: 1.1rem;
+}
+.customer-story-stars {
+  color: #FFD600;
+  font-size: 1.3rem;
+  margin-bottom: 0.7rem;
+}
+.customer-story-card p {
+  color: #18181c;
+  font-size: 1.1rem;
+  margin-bottom: 1.2rem;
+  min-height: 60px;
+}
+.customer-story-user {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+.customer-story-user img {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #e3eafc;
+}
+.customer-story-user strong {
+  font-size: 1rem;
+  color: #18181c;
+  font-weight: 700;
+}
+.customer-story-user span {
+  display: block;
+  color: #888;
+  font-size: 0.95rem;
+}
+.customer-stories-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+}
+.customer-stories-prev,
+.customer-stories-next {
+  background: #fff;
+  border: 1px solid #e3eafc;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  font-size: 1.5rem;
+  color: #2a3a60;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px #0001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.customer-stories-prev:hover,
+.customer-stories-next:hover {
+  background: #e3eafc;
+}
+.customer-stories-dots {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+.customer-stories-dots span {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #e3eafc;
+  transition: background 0.2s;
+}
+.customer-stories-dots span.active {
+  background: #4f8cff;
+}
+@media (max-width: 900px) {
+  .customer-stories-carousel {
+    min-height: 340px;
+  }
+  .customer-story-card,
+  .customer-story-card.active {
+    min-width: 90vw;
+    max-width: 98vw;
+    padding: 1.2rem 0.7rem 1.2rem 0.7rem;
+  }
+}
+@media (max-width: 600px) {
+  .customer-stories {
+    padding: 1.2rem 0 1rem 0;
+  }
+  .customer-stories-header h2 {
+    font-size: 1.1rem;
+    text-align: center;
+    margin-bottom: 0.3rem;
+  }
+  .customer-stories-rating {
+    font-size: 0.95rem;
+    gap: 0.3rem;
+    flex-direction: column;
+    align-items: center;
+  }
+  .rating-score {
+    font-size: 1.2rem;
+  }
+  .rating-stars {
+    font-size: 1rem;
+  }
+  .rating-count {
+    font-size: 0.9rem;
+  }
+  .customer-stories-carousel {
+    min-height: 260px;
+    margin-bottom: 1rem;
+  }
+  .customer-story-card,
+  .customer-story-card.active {
+    min-width: 98vw;
+    max-width: 99vw;
+    padding: 0.7rem 0.2rem 0.7rem 0.2rem;
+    border-radius: 14px;
+    text-align: center;
+    left: 50%;
+    top: 0;
+    font-size: 0.98rem;
+  }
+  .customer-story-logo {
+    justify-content: center;
+    margin-bottom: 0.4rem;
+  }
+  .customer-story-logo img,
+  .customer-story-user img {
+    width: 22px;
+    height: 22px;
+  }
+  .customer-story-logo span {
+    font-size: 0.95rem;
+  }
+  .customer-story-stars {
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
+  }
+  .customer-story-card p {
+    font-size: 0.98rem;
+    min-height: 40px;
+    margin-bottom: 0.7rem;
+  }
+  .customer-story-user {
+    gap: 0.4rem;
+    justify-content: center;
+  }
+  .customer-story-user strong {
+    font-size: 0.95rem;
+  }
+  .customer-story-user span {
+    font-size: 0.85rem;
+  }
+  .customer-stories-controls {
+    gap: 0.5rem;
+  }
+  .customer-stories-prev,
+  .customer-stories-next {
+    width: 28px;
+    height: 28px;
+    font-size: 1.1rem;
+  }
+  .customer-stories-dots span {
+    width: 8px;
+    height: 8px;
+  }
+} 
+
+@media (max-width: 600px) {
+  .customer-story-card,
+  .customer-story-card.active {
+    min-width: 85vw;
+    max-width: 88vw;
+    height: 260px;
+    padding: 1.2rem 0.5rem 1.2rem 0.5rem;
+    border-radius: 18px;
+    text-align: center;
+    left: 50%;
+    top: 0;
+    font-size: 0.98rem;
+    margin: 0 auto;
+    display: none;
+  }
+  .customer-story-card.active {
+    display: block;
   }
 } 

@@ -138,4 +138,66 @@ document.addEventListener('DOMContentLoaded', function () {
     card.addEventListener('mouseenter', () => clearInterval(interval));
     card.addEventListener('mouseleave', startAutoSlide);
   });
+
+  // Customer Stories Carousel
+  const storyCards = document.querySelectorAll('.customer-story-card');
+  const prevBtn = document.querySelector('.customer-stories-prev');
+  const nextBtn = document.querySelector('.customer-stories-next');
+  const dotsContainer = document.querySelector('.customer-stories-dots');
+  let storyCurrent = 0;
+  let storyInterval;
+
+  if (storyCards.length) {
+    function updateStoryCards() {
+      storyCards.forEach((card, idx) => {
+        card.classList.remove('active', 'prev', 'next');
+        if (idx === storyCurrent) {
+          card.classList.add('active');
+        } else if (idx === (storyCurrent - 1 + storyCards.length) % storyCards.length) {
+          card.classList.add('prev');
+        } else if (idx === (storyCurrent + 1) % storyCards.length) {
+          card.classList.add('next');
+        }
+      });
+      // Update dots
+      if (dotsContainer) {
+        dotsContainer.innerHTML = '';
+        for (let i = 0; i < storyCards.length; i++) {
+          const dot = document.createElement('span');
+          if (i === storyCurrent) dot.classList.add('active');
+          dot.addEventListener('click', () => {
+            storyCurrent = i;
+            updateStoryCards();
+            resetStoryInterval();
+          });
+          dotsContainer.appendChild(dot);
+        }
+      }
+    }
+
+    function nextStory() {
+      storyCurrent = (storyCurrent + 1) % storyCards.length;
+      updateStoryCards();
+    }
+    function prevStory() {
+      storyCurrent = (storyCurrent - 1 + storyCards.length) % storyCards.length;
+      updateStoryCards();
+    }
+    function startStoryInterval() {
+      storyInterval = setInterval(nextStory, 3500);
+    }
+    function resetStoryInterval() {
+      clearInterval(storyInterval);
+      startStoryInterval();
+    }
+    updateStoryCards();
+    startStoryInterval();
+    if (nextBtn) nextBtn.addEventListener('click', () => { nextStory(); resetStoryInterval(); });
+    if (prevBtn) prevBtn.addEventListener('click', () => { prevStory(); resetStoryInterval(); });
+    // Pause on hover (desktop)
+    storyCards.forEach(card => {
+      card.addEventListener('mouseenter', () => clearInterval(storyInterval));
+      card.addEventListener('mouseleave', startStoryInterval);
+    });
+  }
 }); 
