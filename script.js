@@ -101,3 +101,41 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   }
 }); 
+
+document.addEventListener('DOMContentLoaded', function () {
+  const cards = document.querySelectorAll('.event-type-card');
+  if (!cards.length) return;
+  let current = 0;
+  let interval;
+
+  function updateCards() {
+    cards.forEach((card, idx) => {
+      card.classList.remove('active', 'prev', 'next');
+      if (idx === current) {
+        card.classList.add('active');
+      } else if (idx === (current - 1 + cards.length) % cards.length) {
+        card.classList.add('prev');
+      } else if (idx === (current + 1) % cards.length) {
+        card.classList.add('next');
+      }
+    });
+  }
+
+  function nextCard() {
+    current = (current + 1) % cards.length;
+    updateCards();
+  }
+
+  function startAutoSlide() {
+    interval = setInterval(nextCard, 2500); // 2.5 seconds
+  }
+
+  updateCards();
+  startAutoSlide();
+
+  // Optional: Pause on hover (desktop)
+  cards.forEach(card => {
+    card.addEventListener('mouseenter', () => clearInterval(interval));
+    card.addEventListener('mouseleave', startAutoSlide);
+  });
+}); 
