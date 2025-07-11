@@ -92,14 +92,48 @@ header {
 }
 
 .hero {
-  background: linear-gradient(120deg, #23232a 0%, #101014 100%);
-  box-shadow: 0 8px 32px 0 rgba(255,255,255,0.04);
-  padding: 7rem 0 5rem 0;
-  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero-bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0.45;
+  pointer-events: none;
+}
+.hero .hero-bg,
+.hero .hero-content {
+  position: relative;
+  z-index: 1;
 }
 .hero-bg {
   background: url('https://www.transparenttextures.com/patterns/cubes.png'), linear-gradient(120deg, #23232a 0%, #101014 100%);
   opacity: 0.10;
+}
+.hero-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 60vh;
+  width: 100%;
+  padding: 2rem 1rem;
+  margin: 0 auto;
+}
+@media (max-width: 600px) {
+  .hero-content {
+    padding: 1.2rem 0.5rem;
+    min-height: 40vh;
+    margin-top: 60px;
+  }
 }
 .hero-content h1 {
   font-size: 2.5rem;
