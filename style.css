@@ -211,7 +211,6 @@ header {
   object-fit: contain;
   background: transparent !important;
   border-radius: 0;
-  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.18), 0 1.5px 8px 0 rgba(0,0,0,0.10);
   filter: none;
   opacity: 1;
   padding: 0;
